@@ -1,0 +1,51 @@
+{% load static %}
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<!-- LOGO -->
+
+<a href="{% url 'home' %}" class="logo">
+
+<img src="{% static 'images/logo.png' %}" alt="Epelle Moi logo">
+
+</a>
+
+
+<!-- MENU -->
+
+<nav class="nav-links">
+
+<a href="{% url 'home' %}">Accueil</a>
+
+<a href="{% url 'about' %}">À propos</a>
+
+<a href="{% url 'history' %}">Histoire</a>
+
+<a href="{% url 'gallery' %}">Galerie</a>
+
+<a href="{% url 'testimonial' %}">Témoignages</a>
+
+<a href="{% url 'team' %}">Équipe</a>
+
+<a href="{% url 'contact' %}">Contact</a>
+
+</nav>
+
+
+<!-- CTA -->
+
+<div class="nav-buttons">
+
+<a href="{% url 'contact' %}" class="btn-login">Contactez-nous</a>
+
+<a href="{% url 'partner' %}" class="btn-partner">
+Devenir partenaire
+</a>
+
+</div>
+
+</div>
+
+</header>

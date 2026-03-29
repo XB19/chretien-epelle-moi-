@@ -1,0 +1,23 @@
+# Base de données
+db.sqlite3
+
+# Fichiers Python compilés
+*.pyc
+__pycache__/
+
+# Dossiers de virtualenv
+venv/
+env/
+
+# Fichiers statiques temporaires
+*.log
+*.pot
+*.py[cod]
+
+# Media files
+media/
+echo epelleApp/static/images/ >> .gitignore
+
+epelleApp/static/images/
+db.sqlite3
+__pycache__/

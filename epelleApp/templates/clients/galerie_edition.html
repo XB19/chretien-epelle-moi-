@@ -1,0 +1,131 @@
+{% extends "clients/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+
+/* HERO */
+
+.page-hero{
+background:linear-gradient(135deg,#1E4DB7,#2563eb);
+padding:90px 10%;
+text-align:center;
+color:white;
+}
+
+.page-hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.page-hero p{
+font-size:17px;
+color:#e5e7eb;
+max-width:700px;
+margin:auto;
+}
+
+
+/* GALLERY */
+
+.gallery-section{
+padding:70px 10%;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.gallery-item{
+overflow:hidden;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+cursor:pointer;
+}
+
+.gallery-item img{
+width:100%;
+height:230px;
+object-fit:cover;
+transition:transform 0.4s ease;
+}
+
+.gallery-item:hover img{
+transform:scale(1.08);
+}
+
+
+/* BACK BUTTON */
+
+.back-btn{
+display:inline-block;
+margin-top:40px;
+background:#1E4DB7;
+color:white;
+padding:12px 24px;
+border-radius:25px;
+text-decoration:none;
+font-weight:600;
+}
+
+.back-btn:hover{
+background:#163c8f;
+}
+
+</style>
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<h1>Edition {{ edition }}</h1>
+
+<p>
+Découvrez les moments forts de cette édition
+du concours Épelle-Moi.
+</p>
+
+</section>
+
+
+
+<!-- GALLERY -->
+
+<section class="gallery-section">
+
+<div class="gallery-grid">
+
+{% for image in images %}
+
+<a href="{% static 'images/gallery/' %}{{ edition }}/{{ image }}" data-lightbox="galerie">
+
+<div class="gallery-item">
+
+<img src="{% static 'images/gallery/' %}{{ edition }}/{{ image }}" alt="photo concours">
+
+</div>
+
+</a>
+
+{% endfor %}
+
+</div>
+
+
+<div style="text-align:center">
+
+<a href="{% url 'gallery' %}" class="back-btn">
+
+← Retour à la galerie
+</a>
+
+</div>
+
+</section>
+
+
+{% endblock %}

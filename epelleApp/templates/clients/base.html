@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Concours Chrétien Epelle-Moi</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/css/lightbox.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+{% include "clients/partials/navbar.html" %}
+
+<main>
+
+{% block content %}
+
+{% endblock %}
+
+</main>
+
+{% include "clients/partials/footer.html" %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.4/dist/js/lightbox.min.js"></script>
+
+<script>
+
+var swiper = new Swiper(".aboutSwiper", {
+
+loop: true,
+
+autoplay:{
+delay:3000,
+disableOnInteraction:false
+},
+
+spaceBetween:20,
+
+});
+
+var swiper = new Swiper(".testimonialSwiper", {
+
+loop:true,
+
+spaceBetween:30,
+
+autoplay:{
+delay:4000,
+disableOnInteraction:false,
+},
+
+pagination:{
+el:".swiper-pagination",
+clickable:true,
+},
+
+breakpoints:{
+
+768:{
+slidesPerView:2
+},
+
+1024:{
+slidesPerView:3
+}
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>

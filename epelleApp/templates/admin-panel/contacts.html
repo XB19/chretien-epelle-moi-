@@ -1,0 +1,79 @@
+{% extends "admin-panel/base.html" %}
+
+{% block content %}
+
+<style>
+
+.table-container{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th, td{
+    padding:12px;
+    text-align:left;
+}
+
+th{
+    background:#f3f4f6;
+}
+
+tr{
+    border-bottom:1px solid #eee;
+    cursor:pointer;
+}
+
+tr:hover{
+    background:#f9fafb;
+}
+
+.badge{
+    background:#1E4DB7;
+    color:white;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+</style>
+
+<h2>📩 Messages reçus ({{ contacts|length }})</h2>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+<th>#</th>
+<th>Nom</th>
+<th>Email</th>
+<th>Date</th>
+<th>Téléphone</th>
+</tr>
+
+{% for contact in contacts %}
+
+<tr onclick="window.location.href='{% url 'admin_contact_detail' contact.id %}'">
+
+<td>{{ forloop.counter }}</td>
+<td>{{ contact.name }}</td>
+<td>{{ contact.email }}</td>
+<td>{{ contact.phone }}</td>
+<td>{{ contact.created_at|date:"d M Y" }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

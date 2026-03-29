@@ -1,0 +1,70 @@
+{% extends "admin-panel/base.html" %}
+
+{% block content %}
+
+<style>
+
+.dashboard-title{
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+/* CARDS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+    text-decoration:none;
+    color:black;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    font-size:32px;
+    margin:0;
+    color:#1E4DB7;
+}
+
+.card p{
+    margin-top:10px;
+    color:#666;
+}
+
+.card span{
+    font-size:13px;
+    color:#999;
+}
+
+</style>
+
+<h2 class="dashboard-title">📊 Tableau de bord</h2>
+
+<div class="cards">
+
+<a href="{% url 'admin_contacts' %}" class="card">
+    <h3>{{ contacts_count }}</h3>
+    <p>Messages reçus</p>
+    <span>Voir les détails →</span>
+</a>
+
+<a href="{% url 'admin_partners' %}" class="card">
+    <h3>{{ partners_count }}</h3>
+    <p>Demandes partenaires</p>
+    <span>Voir les détails →</span>
+</a>
+
+</div>
+
+{% endblock %}

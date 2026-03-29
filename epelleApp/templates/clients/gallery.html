@@ -1,0 +1,202 @@
+{% extends "clients/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+
+/* HERO */
+
+.page-hero{
+background:linear-gradient(135deg,#1E4DB7,#2563eb);
+padding:100px 10%;
+text-align:center;
+color:white;
+}
+
+.page-hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.page-hero p{
+font-size:18px;
+color:#e5e7eb;
+max-width:700px;
+margin:auto;
+}
+
+
+/* INTRO */
+
+.gallery-intro{
+padding:70px 10%;
+text-align:center;
+}
+
+.gallery-intro h2{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.gallery-intro p{
+color:#666;
+max-width:700px;
+margin:auto;
+line-height:1.7;
+}
+
+
+/* GRID */
+
+.gallery-section{
+padding:60px 10%;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.gallery-item{
+position:relative;
+overflow:hidden;
+border-radius:12px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.gallery-item img{
+width:100%;
+height:220px;
+object-fit:cover;
+transition:transform 0.4s ease;
+}
+
+.gallery-item:hover img{
+transform:scale(1.08);
+}
+
+
+/* OVERLAY */
+
+.gallery-overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(30,77,183,0.6);
+display:flex;
+align-items:center;
+justify-content:center;
+opacity:0;
+transition:0.3s;
+}
+
+.gallery-item:hover .gallery-overlay{
+opacity:1;
+}
+
+.gallery-overlay span{
+color:white;
+font-size:18px;
+font-weight:600;
+}
+
+
+/* CTA */
+
+.gallery-cta{
+padding:80px 10%;
+text-align:center;
+background:#1E4DB7;
+color:white;
+}
+
+.gallery-cta p{
+color:#e5e7eb;
+margin-bottom:25px;
+}
+
+.gallery-btn{
+background:#FFC107;
+padding:12px 28px;
+border-radius:30px;
+text-decoration:none;
+color:black;
+font-weight:600;
+}
+
+</style>
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<h1>Moments inoubliables</h1>
+
+<p>
+Chaque édition du concours Chrétien Épelle-Moi est remplie
+de moments de joie, de concentration et de célébration.
+Cliquez sur une édition pour découvrir toutes les photos.
+</p>
+
+</section>
+
+
+
+
+
+
+
+
+<!-- EDITIONS -->
+
+<section class="gallery-section">
+
+<div class="gallery-grid">
+
+{% for edition in editions %}
+
+
+
+<a href="{% url 'galerie_edition' edition.name %}" class="gallery-item">
+
+<img src="{% static 'images/gallery/' %}{{ edition.name }}/{{ edition.cover }}">
+
+<div class="gallery-overlay">
+<span>Edition {{ edition.name }}</span>
+</div>
+
+</a>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="gallery-cta">
+
+<h2>Participez à la prochaine édition</h2>
+
+<p>
+Vous souhaitez vivre cette expérience ?
+Inscrivez-vous ou contactez l’équipe
+du concours Chrétien Épelle-Moi.
+</p>
+
+<a href="{% url 'contact' %}" class="gallery-btn">
+Nous contacter
+</a>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,312 @@
+{% extends "clients/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+
+/* HERO */
+
+.page-hero{
+background:linear-gradient(135deg,#1E4DB7,#2563eb);
+padding:100px 10%;
+text-align:center;
+color:white;
+}
+
+.page-hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.page-hero p{
+font-size:18px;
+color:#e5e7eb;
+max-width:700px;
+margin:auto;
+}
+
+
+/* INTRO */
+
+.team-intro{
+padding:80px 10%;
+text-align:center;
+}
+
+.team-intro h2{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.team-intro p{
+max-width:700px;
+margin:auto;
+color:#666;
+line-height:1.7;
+}
+
+
+/* TEAM */
+
+.team-section{
+padding:80px 10%;
+background:#f9fafb;
+}
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+}
+
+.team-card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+text-align:center;
+transition:0.3s;
+}
+
+.team-card:hover{
+transform:translateY(-6px);
+}
+
+.team-photo{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+}
+
+.team-card h3{
+margin-bottom:5px;
+}
+
+.team-role{
+font-size:14px;
+color:#1E4DB7;
+margin-bottom:10px;
+font-weight:600;
+}
+
+.team-card p{
+font-size:14px;
+color:#666;
+line-height:1.6;
+}
+
+
+/* SOCIAL */
+
+.team-social{
+margin-top:15px;
+}
+
+.team-social a{
+margin:0 8px;
+color:#555;
+font-size:16px;
+transition:0.3s;
+}
+
+.team-social a:hover{
+color:#1E4DB7;
+}
+
+
+/* CTA */
+
+.team-cta{
+padding:80px 10%;
+text-align:center;
+background:#1E4DB7;
+color:white;
+}
+
+.team-cta p{
+color:#e5e7eb;
+margin-bottom:25px;
+}
+
+</style>
+
+
+
+<!-- HERO -->
+
+<section class="page-hero">
+
+<h1>Notre équipe</h1>
+
+<p>
+Découvrez les personnes engagées derrière
+l’organisation du concours Chrétien Épelle-Moi.
+</p>
+
+</section>
+
+
+
+<!-- INTRO -->
+
+<section class="team-intro">
+
+<h2>Une équipe engagée</h2>
+
+<p>
+Le concours Chrétien Épelle-Moi est organisé par une équipe
+passionnée par l’éducation, la lecture et les valeurs
+chrétiennes. Ensemble, nous travaillons pour offrir
+aux jeunes une expérience éducative et inspirante.
+</p>
+
+</section>
+
+
+
+<!-- TEAM MEMBERS -->
+
+<section class="team-section">
+
+<div class="container">
+
+<div class="team-grid">
+
+
+<!-- MEMBER -->
+
+<div class="team-card">
+
+<img src="{% static 'images/team1.jpg' %}" class="team-photo">
+
+<h3>Ayetan Daniel</h3>
+
+<p class="team-role">Fondateur</p>
+
+<p>
+Visionnaire du projet Chrétien Épelle-Moi,
+il œuvre pour promouvoir l’éducation
+et la lecture chez les jeunes.
+</p>
+
+<div class="team-social">
+
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
+<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+<a href="#"><i class="fa-brands fa-twitter"></i></a>
+
+</div>
+
+</div>
+
+
+
+<!-- MEMBER -->
+
+<div class="team-card">
+
+<img src="{% static 'images/team2.jpg' %}" class="team-photo">
+
+<h3>SOUNTOU Ambroise</h3>
+
+<p class="team-role">Responsable de la Logistique</p>
+
+<p>
+Elle assure l’organisation et
+le bon déroulement des différentes
+éditions du concours.
+</p>
+
+<div class="team-social">
+
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
+<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+</div>
+
+</div>
+
+
+
+<!-- MEMBER -->
+
+<div class="team-card">
+
+<img src="{% static 'images/team3.jpg' %}" class="team-photo">
+
+<h3>Hossou Abra Alida</h3>
+
+<p class="team-role">Jury</p>
+
+<p>
+elle accompagne les participants
+dans leur préparation et leur
+progression.
+</p>
+
+<div class="team-social">
+
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
+<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+</div>
+
+</div>
+
+
+
+<!-- MEMBER -->
+
+<div class="team-card">
+
+<img src="{% static 'images/team4.jpg' %}" class="team-photo">
+
+<h3>KADANGA yao Fernand</h3>
+
+<p class="team-role">Responsable de couverture médiatique</p>
+
+<p>
+Il gère la communication et
+la promotion du concours
+auprès du public.
+</p>
+
+<div class="team-social">
+
+<a href="#"><i class="fa-brands fa-facebook"></i></a>
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="team-cta">
+
+<h2>Envie de rejoindre l’équipe ?</h2>
+
+<p>
+Vous souhaitez contribuer au développement
+du concours Chrétien Épelle-Moi ? Contactez-nous.
+</p>
+
+<a href="{% url 'contact' %}" class="btn-primary">
+Nous contacter
+</a>
+
+</section>
+
+{% endblock %}
