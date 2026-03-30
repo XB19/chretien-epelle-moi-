@@ -15,9 +15,3 @@ env/
 *.py[cod]
 
 # Media files
-media/
-echo epelleApp/static/images/ >> .gitignore
-
-epelleApp/static/images/
-db.sqlite3
-__pycache__/
