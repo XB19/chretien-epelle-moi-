@@ -1,17 +1,7 @@
-# Base de données
-db.sqlite3
+node_modules
+dist
+.env
+.env.local
 
-# Fichiers Python compilés
-*.pyc
-__pycache__/
-
-# Dossiers de virtualenv
-venv/
-env/
-
-# Fichiers statiques temporaires
-*.log
-*.pot
-*.py[cod]
-
-# Media files
+# Sauvegarde locale des données de l'ancienne base Django (contient des emails)
+backup-donnees-django.json

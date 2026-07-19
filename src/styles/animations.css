@@ -1,0 +1,118 @@
+/* =========================
+ANIMATIONS GLOBALES DU SITE
+(révélation au scroll — le design reste inchangé)
+========================= */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+/* État initial : caché avant révélation */
+.reveal-hidden{
+  opacity:0;
+}
+
+/* Variantes de révélation */
+.reveal-in.reveal-from-up{
+  animation:revealUp 0.8s cubic-bezier(0.22,0.61,0.36,1) both;
+  animation-delay:var(--reveal-delay,0s);
+}
+
+.reveal-in.reveal-from-left{
+  animation:revealLeft 0.85s cubic-bezier(0.22,0.61,0.36,1) both;
+  animation-delay:var(--reveal-delay,0s);
+}
+
+.reveal-in.reveal-from-right{
+  animation:revealRight 0.85s cubic-bezier(0.22,0.61,0.36,1) both;
+  animation-delay:var(--reveal-delay,0s);
+}
+
+@keyframes revealUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes revealLeft{
+  from{
+    opacity:0;
+    transform:translateX(-42px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes revealRight{
+  from{
+    opacity:0;
+    transform:translateX(42px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+/* Entrée douce de la navbar */
+.navbar{
+  animation:navReveal 0.6s ease both;
+}
+
+@keyframes navReveal{
+  from{
+    opacity:0;
+    transform:translateY(-14px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* Zoom lent sur l'image du hero (accueil) */
+.hero-bg{
+  animation:heroZoom 9s ease-out both;
+}
+
+@keyframes heroZoom{
+  from{
+    transform:scale(1.12);
+  }
+  to{
+    transform:scale(1);
+  }
+}
+
+/* Respect du réglage système "réduire les animations" */
+@media (prefers-reduced-motion: reduce){
+
+  html{
+    scroll-behavior:auto;
+  }
+
+  .navbar,
+  .hero-bg{
+    animation:none;
+  }
+
+  .reveal-hidden{
+    opacity:1;
+  }
+
+  .reveal-in{
+    animation:none !important;
+  }
+
+}
