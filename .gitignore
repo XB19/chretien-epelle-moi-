@@ -6,5 +6,6 @@ dist
 # Sauvegarde locale des données de l'ancienne base Django (contient des emails)
 backup-donnees-django.json
 
-# Outil local de diagnostic
+# Outils locaux de diagnostic
 check-site.mjs
+check-full.mjs
