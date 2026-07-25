@@ -5,6 +5,7 @@ import { formatDate } from './dates.js'
 
 export default function AdminPartners() {
   const [partners, setPartners] = useState(null)
+  const [deletingId, setDeletingId] = useState(null)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -14,6 +15,26 @@ export default function AdminPartners() {
       .order('id', { ascending: false })
       .then(({ data }) => setPartners(data ?? []))
   }, [])
+
+  const handleDelete = async (partner) => {
+    const confirmed = window.confirm(
+      `Supprimer la demande de ${partner.organization} ? Cette action est irréversible.`
+    )
+    if (!confirmed) return
+
+    setDeletingId(partner.id)
+
+    const { error } = await supabase.from('partners').delete().eq('id', partner.id)
+
+    setDeletingId(null)
+
+    if (error) {
+      window.alert("La suppression a échoué. Réessayez plus tard.")
+      return
+    }
+
+    setPartners((prev) => prev.filter((p) => p.id !== partner.id))
+  }
 
   return (
     <>
@@ -41,17 +62,39 @@ export default function AdminPartners() {
                 <th>Email</th>
                 <th>Téléphone</th>
                 <th>Date</th>
+                <th>Actions</th>
               </tr>
             </thead>
 
             <tbody>
               {partners.map((partner, index) => (
-                <tr key={partner.id} onClick={() => navigate(`/admin-panel/partners/${partner.id}`)}>
+                <tr key={partner.id}>
                   <td>{index + 1}</td>
                   <td>{partner.organization}</td>
                   <td>{partner.email}</td>
                   <td>{partner.phone}</td>
                   <td>{formatDate(partner.created_at)}</td>
+                  <td className="admin-table-actions">
+                    <div className="admin-actions">
+                      <button
+                        type="button"
+                        className="admin-action-btn admin-action-view"
+                        onClick={() => navigate(`/admin-panel/partners/${partner.id}`)}
+                      >
+                        <i className="fa-solid fa-eye"></i>
+                        Voir
+                      </button>
+                      <button
+                        type="button"
+                        className="admin-action-btn admin-action-delete"
+                        onClick={() => handleDelete(partner)}
+                        disabled={deletingId === partner.id}
+                      >
+                        <i className="fa-solid fa-trash"></i>
+                        Supprimer
+                      </button>
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>

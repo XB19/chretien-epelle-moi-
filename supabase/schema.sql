@@ -54,6 +54,17 @@ create policy "Lecture admin des partenaires"
   to authenticated
   using (true);
 
+-- Suppression réservée à l'admin connecté (bouton "Supprimer" du panneau admin)
+create policy "Suppression admin des contacts"
+  on public.contacts for delete
+  to authenticated
+  using (true);
+
+create policy "Suppression admin des partenaires"
+  on public.partners for delete
+  to authenticated
+  using (true);
+
 -- =============================================================
 -- Compte administrateur :
 -- Dashboard Supabase -> Authentication -> Users -> "Add user"

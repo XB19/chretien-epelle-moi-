@@ -5,6 +5,7 @@ import { formatDate } from './dates.js'
 
 export default function AdminContacts() {
   const [contacts, setContacts] = useState(null)
+  const [deletingId, setDeletingId] = useState(null)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -14,6 +15,26 @@ export default function AdminContacts() {
       .order('id', { ascending: false })
       .then(({ data }) => setContacts(data ?? []))
   }, [])
+
+  const handleDelete = async (contact) => {
+    const confirmed = window.confirm(
+      `Supprimer le message de ${contact.name} ? Cette action est irréversible.`
+    )
+    if (!confirmed) return
+
+    setDeletingId(contact.id)
+
+    const { error } = await supabase.from('contacts').delete().eq('id', contact.id)
+
+    setDeletingId(null)
+
+    if (error) {
+      window.alert("La suppression a échoué. Réessayez plus tard.")
+      return
+    }
+
+    setContacts((prev) => prev.filter((c) => c.id !== contact.id))
+  }
 
   return (
     <>
@@ -41,17 +62,39 @@ export default function AdminContacts() {
                 <th>Email</th>
                 <th>Téléphone</th>
                 <th>Date</th>
+                <th>Actions</th>
               </tr>
             </thead>
 
             <tbody>
               {contacts.map((contact, index) => (
-                <tr key={contact.id} onClick={() => navigate(`/admin-panel/contacts/${contact.id}`)}>
+                <tr key={contact.id}>
                   <td>{index + 1}</td>
                   <td>{contact.name}</td>
                   <td>{contact.email}</td>
                   <td>{contact.phone}</td>
                   <td>{formatDate(contact.created_at)}</td>
+                  <td className="admin-table-actions">
+                    <div className="admin-actions">
+                      <button
+                        type="button"
+                        className="admin-action-btn admin-action-view"
+                        onClick={() => navigate(`/admin-panel/contacts/${contact.id}`)}
+                      >
+                        <i className="fa-solid fa-eye"></i>
+                        Voir
+                      </button>
+                      <button
+                        type="button"
+                        className="admin-action-btn admin-action-delete"
+                        onClick={() => handleDelete(contact)}
+                        disabled={deletingId === contact.id}
+                      >
+                        <i className="fa-solid fa-trash"></i>
+                        Supprimer
+                      </button>
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>

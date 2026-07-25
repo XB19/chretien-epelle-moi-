@@ -329,7 +329,6 @@
 
 .admin-table tbody tr{
   border-bottom:1px solid var(--admin-border);
-  cursor:pointer;
   transition:0.15s;
 }
 
@@ -344,6 +343,55 @@
 .admin-table td{
   padding:14px 16px;
   font-size:14.5px;
+}
+
+.admin-table td.admin-table-actions{
+  white-space:nowrap;
+}
+
+.admin-actions{
+  display:flex;
+  gap:8px;
+}
+
+.admin-action-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  border:none;
+  border-radius:8px;
+  padding:8px 14px;
+  font-size:13px;
+  font-family:'Poppins',sans-serif;
+  font-weight:500;
+  cursor:pointer;
+  text-decoration:none;
+  transition:0.2s;
+}
+
+.admin-action-view{
+  background:#eaf0ff;
+  color:var(--admin-primary);
+}
+
+.admin-action-view:hover{
+  background:var(--admin-primary);
+  color:#fff;
+}
+
+.admin-action-delete{
+  background:#fff1f2;
+  color:#e11d48;
+}
+
+.admin-action-delete:hover{
+  background:#e11d48;
+  color:#fff;
+}
+
+.admin-action-delete:disabled{
+  opacity:0.6;
+  cursor:not-allowed;
 }
 
 .admin-empty{
