@@ -3,36 +3,9 @@ import { Link, useParams } from 'react-router-dom'
 import { supabase } from '../lib/supabase.js'
 import { formatDateTime } from './dates.js'
 
-const css = `
-.detail-box{
-    background:white;
-    padding:30px;
-    border-radius:16px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-.detail-box h3{
-    margin-bottom:10px;
-}
-
-.detail-box p{
-    color:#555;
-}
-
-.back-btn{
-    display:inline-block;
-    margin-top:20px;
-    background:#1E4DB7;
-    color:white;
-    padding:10px 20px;
-    border-radius:25px;
-    text-decoration:none;
-}
-`
-
 export default function ContactDetail() {
   const { id } = useParams()
-  const [contact, setContact] = useState(null)
+  const [contact, setContact] = useState(undefined) // undefined = chargement, null = introuvable
 
   useEffect(() => {
     supabase
@@ -40,31 +13,51 @@ export default function ContactDetail() {
       .select('*')
       .eq('id', id)
       .single()
-      .then(({ data }) => setContact(data))
+      .then(({ data }) => setContact(data ?? null))
   }, [id])
-
-  if (!contact) return null
 
   return (
     <>
-      <style>{css}</style>
+      <h2 className="admin-page-title">
+        <i className="fa-solid fa-envelope-open-text"></i>
+        Détail du message
+      </h2>
 
-      <h2>Détail du message</h2>
+      {contact === undefined ? (
+        <div className="admin-loading">Chargement…</div>
+      ) : contact === null ? (
+        <div className="admin-detail-box">
+          <div className="admin-empty">
+            <i className="fa-solid fa-circle-exclamation"></i>
+            Ce message est introuvable.
+          </div>
+          <Link to="/admin-panel/contacts" className="admin-back-btn">
+            <i className="fa-solid fa-arrow-left"></i>
+            Retour
+          </Link>
+        </div>
+      ) : (
+        <div className="admin-detail-box">
 
-      <div className="detail-box">
+          <h2>{contact.name}</h2>
 
-        <h3>{contact.name}</h3>
-        <p><strong>Email :</strong> {contact.email}</p>
-        <p><strong>Téléphone :</strong> {contact.phone}</p>
-        <p><strong>Date :</strong> {formatDateTime(contact.created_at)}</p>
+          <div className="admin-detail-meta">
+            <span><strong>Email :</strong> {contact.email}</span>
+            <span><strong>Téléphone :</strong> {contact.phone}</span>
+            <span><strong>Date :</strong> {formatDateTime(contact.created_at)}</span>
+          </div>
 
-        <hr />
+          <div className="admin-detail-message">
+            {contact.message}
+          </div>
 
-        <p>{contact.message}</p>
+          <Link to="/admin-panel/contacts" className="admin-back-btn">
+            <i className="fa-solid fa-arrow-left"></i>
+            Retour
+          </Link>
 
-        <Link to="/admin-panel/contacts" className="back-btn">← Retour</Link>
-
-      </div>
+        </div>
+      )}
     </>
   )
 }

@@ -1,75 +1,27 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase.js'
-
-const css = `
-.login-page{
-font-family:Arial;
-background:#f4f6fb;
-display:flex;
-align-items:center;
-justify-content:center;
-height:100vh;
-}
-
-.login-box{
-background:white;
-padding:40px;
-width:350px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-.login-box h2{
-text-align:center;
-margin-bottom:25px;
-}
-
-.login-box input{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-border:1px solid #ddd;
-border-radius:6px;
-box-sizing:border-box;
-}
-
-.login-box button{
-width:100%;
-padding:12px;
-background:#1E4DB7;
-color:white;
-border:none;
-border-radius:6px;
-cursor:pointer;
-}
-
-.login-box button:hover{
-background:#163c8f;
-}
-
-.login-error{
-color:#dc2626;
-font-size:14px;
-margin-bottom:15px;
-text-align:center;
-}
-`
+import { asset } from '../lib/assets.js'
+import '../styles/admin.css'
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError('')
+    setLoading(true)
 
     const { error: authError } = await supabase.auth.signInWithPassword({
       email,
       password,
     })
+
+    setLoading(false)
 
     if (authError) {
       setError('Identifiants incorrects.')
@@ -80,42 +32,59 @@ export default function AdminLogin() {
   }
 
   return (
-    <>
-      <style>{css}</style>
+    <div className="admin-login-page">
 
-      <div className="login-page">
+      <div className="admin-login-box">
 
-        <div className="login-box">
+        <img src={asset('logo.png')} alt="Epelle Moi" className="admin-login-logo" />
 
-          <h2>Connexion Admin</h2>
+        <h2>Connexion Admin</h2>
+        <p className="admin-login-subtitle">Accédez à l'espace d'administration</p>
 
-          <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
 
+          <div className="admin-login-field">
+            <label htmlFor="email">Adresse email</label>
             <input
+              id="email"
               type="email"
               name="email"
-              placeholder="Adresse email"
+              placeholder="votre@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              autoComplete="username"
+              required
             />
+          </div>
 
+          <div className="admin-login-field">
+            <label htmlFor="password">Mot de passe</label>
             <input
+              id="password"
               type="password"
               name="password"
-              placeholder="Mot de passe"
+              placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
+              required
             />
+          </div>
 
-            {error && <p className="login-error">{error}</p>}
+          {error && <p className="admin-login-error">{error}</p>}
 
-            <button type="submit">Se connecter</button>
+          <button type="submit" disabled={loading}>
+            {loading ? 'Connexion…' : 'Se connecter'}
+          </button>
 
-          </form>
+        </form>
 
-        </div>
+        <Link to="/" className="admin-login-back">
+          ← Retour au site
+        </Link>
 
       </div>
-    </>
+
+    </div>
   )
 }

@@ -2,52 +2,6 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { supabase } from '../lib/supabase.js'
 
-const css = `
-.dashboard-title{
-    font-size:28px;
-    margin-bottom:30px;
-}
-
-/* CARDS */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:16px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    transition:0.3s;
-    text-decoration:none;
-    color:black;
-    display:block;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card h3{
-    font-size:32px;
-    margin:0;
-    color:#1E4DB7;
-}
-
-.card p{
-    margin-top:10px;
-    color:#666;
-}
-
-.card span{
-    font-size:13px;
-    color:#999;
-}
-`
-
 export default function Dashboard() {
   const [contactsCount, setContactsCount] = useState(0)
   const [partnersCount, setPartnersCount] = useState(0)
@@ -66,19 +20,26 @@ export default function Dashboard() {
 
   return (
     <>
-      <style>{css}</style>
+      <h2 className="admin-page-title">
+        <i className="fa-solid fa-chart-line"></i>
+        Tableau de bord
+      </h2>
 
-      <h2 className="dashboard-title">📊 Tableau de bord</h2>
+      <div className="admin-cards">
 
-      <div className="cards">
-
-        <Link to="/admin-panel/contacts" className="card">
+        <Link to="/admin-panel/contacts" className="admin-card">
+          <div className="admin-card-icon">
+            <i className="fa-solid fa-envelope"></i>
+          </div>
           <h3>{contactsCount}</h3>
           <p>Messages reçus</p>
           <span>Voir les détails →</span>
         </Link>
 
-        <Link to="/admin-panel/partners" className="card">
+        <Link to="/admin-panel/partners" className="admin-card">
+          <div className="admin-card-icon">
+            <i className="fa-solid fa-handshake"></i>
+          </div>
           <h3>{partnersCount}</h3>
           <p>Demandes partenaires</p>
           <span>Voir les détails →</span>

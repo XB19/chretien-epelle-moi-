@@ -3,48 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase.js'
 import { formatDate } from './dates.js'
 
-const css = `
-.table-container{
-    background:white;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th, td{
-    padding:12px;
-    text-align:left;
-}
-
-th{
-    background:#f3f4f6;
-}
-
-tr{
-    border-bottom:1px solid #eee;
-    cursor:pointer;
-}
-
-tr:hover{
-    background:#f9fafb;
-}
-
-.badge{
-    background:#1E4DB7;
-    color:white;
-    padding:5px 10px;
-    border-radius:20px;
-    font-size:12px;
-}
-`
-
 export default function AdminContacts() {
-  const [contacts, setContacts] = useState([])
+  const [contacts, setContacts] = useState(null)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -57,41 +17,47 @@ export default function AdminContacts() {
 
   return (
     <>
-      <style>{css}</style>
+      <h2 className="admin-page-title">
+        <i className="fa-solid fa-envelope"></i>
+        Messages reçus {contacts ? `(${contacts.length})` : ''}
+      </h2>
 
-      <h2>📩 Messages reçus ({contacts.length})</h2>
+      <div className="admin-table-container">
 
-      <div className="table-container">
+        {contacts === null ? (
+          <div className="admin-loading">Chargement…</div>
+        ) : contacts.length === 0 ? (
+          <div className="admin-empty">
+            <i className="fa-solid fa-inbox"></i>
+            Aucun message reçu pour le moment.
+          </div>
+        ) : (
+          <table className="admin-table">
 
-        <table>
-
-          <tbody>
-
-            <tr>
-              <th>#</th>
-              <th>Nom</th>
-              <th>Email</th>
-              <th>Téléphone</th>
-              <th>Date</th>
-            </tr>
-
-            {contacts.map((contact, index) => (
-
-              <tr key={contact.id} onClick={() => navigate(`/admin-panel/contacts/${contact.id}`)}>
-
-                <td>{index + 1}</td>
-                <td>{contact.name}</td>
-                <td>{contact.email}</td>
-                <td>{contact.phone}</td>
-                <td>{formatDate(contact.created_at)}</td>
-
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Date</th>
               </tr>
+            </thead>
 
-            ))}
+            <tbody>
+              {contacts.map((contact, index) => (
+                <tr key={contact.id} onClick={() => navigate(`/admin-panel/contacts/${contact.id}`)}>
+                  <td>{index + 1}</td>
+                  <td>{contact.name}</td>
+                  <td>{contact.email}</td>
+                  <td>{contact.phone}</td>
+                  <td>{formatDate(contact.created_at)}</td>
+                </tr>
+              ))}
+            </tbody>
 
-          </tbody>
-
-        </table>
+          </table>
+        )}
 
       </div>
     </>

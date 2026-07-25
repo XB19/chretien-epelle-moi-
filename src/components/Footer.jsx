@@ -47,7 +47,7 @@ export default function Footer() {
 
             <li><Link to="/">Accueil</Link></li>
             <li><Link to="/a-propos">à propos</Link></li>
-            <li><a href="#">Mode de Jeu</a></li>
+            <li><Link to="/admin-login">Partie Admin</Link></li>
             <li><Link to="/contact">Contact</Link></li>
 
           </ul>
