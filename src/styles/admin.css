@@ -2,7 +2,7 @@
    ADMIN - VARIABLES
    ========================= */
 
-.admin-root{
+:root{
   --admin-primary:#1E4DB7;
   --admin-primary-dark:#163c8f;
   --admin-gold:#FFC107;
@@ -10,7 +10,9 @@
   --admin-text:#333;
   --admin-muted:#666;
   --admin-border:#e5e7eb;
+}
 
+.admin-root{
   font-family:'Poppins',sans-serif;
   color:var(--admin-text);
   background:var(--admin-bg);
