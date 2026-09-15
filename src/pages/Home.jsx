@@ -23,13 +23,12 @@ export default function Home() {
         <div className="hero-content">
 
           <h1>
-            Concours  <br />
             <span>Chrétien-Epelle-Moi</span>
           </h1>
 
           <p className="hero-subtitle">
             “Joue, apprends et progresse
-            dans ta foi et ton orthographe”
+            dans ta foi”
           </p>
 
           <div className="hero-buttons">
