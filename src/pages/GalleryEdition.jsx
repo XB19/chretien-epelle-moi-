@@ -121,7 +121,7 @@ export default function GalleryEdition() {
         <h1>Edition {edition}</h1>
         <p>
           Découvrez les moments forts de cette édition
-          du concours Épelle-Moi.
+          de Chrétien-Épelle-Moi.
         </p>
       </section>
 

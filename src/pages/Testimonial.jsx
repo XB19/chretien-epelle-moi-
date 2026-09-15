@@ -298,7 +298,7 @@ export default function Testimonial() {
 
         <p>
           Découvrez les expériences vécues par les lauréats
-          des différentes éditions du concours Chrétien Épelle-Moi.
+          des différentes éditions de Chrétien-Épelle-Moi.
         </p>
 
       </section>

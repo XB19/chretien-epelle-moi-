@@ -411,7 +411,7 @@ export default function Contact() {
 
       <section className="page-hero">
 
-        <h1>Contactez l’équipe du concours Chrétien Épelle-Moi</h1>
+        <h1>Contactez l’équipe de Chrétien-Épelle-Moi</h1>
 
         <p>
           Une question, une suggestion ou une proposition de partenariat ?
@@ -438,8 +438,8 @@ export default function Contact() {
 
 
             <p>
-              Pour toute information concernant le
-              <strong> Concours Chrétien Épelle-Moi</strong>,
+              Pour toute information concernant
+              <strong> Chrétien-Épelle-Moi</strong>,
               n'hésitez pas à nous contacter.
               Notre équipe se tient à votre disposition
               pour répondre à vos questions concernant

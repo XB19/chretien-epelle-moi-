@@ -529,7 +529,7 @@ export default function Partner() {
 
       <section className="page-hero">
 
-        <h1>Devenir partenaire du concours Chrétien Épelle-Moi</h1>
+        <h1>Devenir partenaire de Chrétien-Épelle-Moi</h1>
 
         <p>
           Associez votre organisation à une initiative éducative
@@ -548,7 +548,7 @@ export default function Partner() {
         <h2>Pourquoi devenir partenaire ?</h2>
 
         <p>
-          En devenant partenaire du concours <strong>Chrétien Épelle-Moi</strong>,
+          En devenant partenaire de <strong>Chrétien-Épelle-Moi</strong>,
           vous contribuez activement à une initiative qui favorise
           l’épanouissement intellectuel, culturel et spirituel des jeunes.
           Votre organisation s’associe ainsi à un projet éducatif,

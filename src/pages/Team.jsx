@@ -416,7 +416,7 @@ export default function Team() {
 
         <p>
           Découvrez les personnes engagées derrière
-          l’organisation du concours Chrétien Épelle-Moi.
+          l’organisation de Chrétien-Épelle-Moi.
         </p>
 
       </section>
@@ -430,7 +430,7 @@ export default function Team() {
         <h2>Une équipe passionnée et engagée</h2>
 
         <p>
-          Le concours Chrétien Épelle-Moi est porté par une équipe
+          Chrétien-Épelle-Moi est porté par une équipe
           dynamique passionnée par l’éducation, la lecture et les valeurs
           chrétiennes. Chaque membre contribue activement à offrir
           une expérience inspirante et enrichissante aux jeunes participants.
@@ -484,7 +484,7 @@ export default function Team() {
 
         <p>
           Vous souhaitez contribuer au développement
-          du concours Chrétien Épelle-Moi ?
+          de Chrétien-Épelle-Moi ?
           Notre équipe reste ouverte aux collaborations
           et aux personnes motivées.
         </p>

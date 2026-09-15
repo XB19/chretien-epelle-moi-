@@ -14,7 +14,7 @@ export default function Home() {
       <section className="hero">
 
         {/* IMAGE DE FOND */}
-        <img src={asset('hero-bg.jpg')} className="hero-bg" alt="Concours Epelle Moi" />
+        <img src={asset('hero-bg.jpg')} className="hero-bg" alt="Chrétien-Épelle-Moi" />
 
         {/* COUCHE BLEUE */}
         <div className="hero-overlay"></div>
@@ -54,7 +54,7 @@ export default function Home() {
             <h2>Présentation du concours</h2>
 
             <p>
-              Le concours <strong>Chrétien Épelle-Moi</strong> est une initiative
+              <strong>Chrétien-Épelle-Moi</strong> est une initiative
               éducative et spirituelle portée par une équipe de bénévoles engagés
               au service de la jeunesse et de l’Église.
             </p>
@@ -78,7 +78,7 @@ export default function Home() {
               fraternité et de compétition saine.
             </p>
 
-            <Link to="/a-propos" className="btn-primary">
+            <Link to="/concours" className="btn-primary">
               Découvrir le projet
             </Link>
 
@@ -128,7 +128,7 @@ export default function Home() {
             <h2>Notre mission</h2>
 
             <p className="mission-intro">
-              Le concours <strong>Chrétien Épelle-Moi</strong>,a pour
+              <strong>Chrétien-Épelle-Moi</strong> a pour
               mission de contribuer à l’épanouissement intellectuel,
               culturel et spirituel des jeunes en leur offrant
               un cadre éducatif inspiré des valeurs chrétiennes.

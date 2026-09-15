@@ -237,7 +237,7 @@ export default function Donation() {
 
       <section className="donation-hero">
 
-        <h1>Soutenez le concours Chrétien Épelle-Moi</h1>
+        <h1>Soutenez Chrétien-Épelle-Moi</h1>
 
         <p>
           Votre soutien nous aide à accompagner davantage de jeunes,

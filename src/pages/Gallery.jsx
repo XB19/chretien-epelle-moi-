@@ -143,7 +143,7 @@ export default function Gallery() {
       <section className="page-hero">
         <h1>Moments inoubliables</h1>
         <p>
-          Chaque édition du concours Chrétien Épelle-Moi est remplie
+          Chaque édition de Chrétien-Épelle-Moi est remplie
           de moments de joie, de concentration et de célébration.
           Cliquez sur une édition pour découvrir toutes les photos.
         </p>
@@ -174,7 +174,7 @@ export default function Gallery() {
         <p>
           Vous souhaitez vivre cette expérience ?
           Inscrivez-vous ou contactez l’équipe
-          du concours Chrétien Épelle-Moi.
+          de Chrétien-Épelle-Moi.
         </p>
         <Link to="/contact" className="gallery-btn">
           Nous contacter

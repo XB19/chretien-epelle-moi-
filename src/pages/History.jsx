@@ -381,7 +381,7 @@ export default function History() {
 
       <section className="page-hero">
 
-        <h1>L’histoire du concours Chrétien Épelle-Moi</h1>
+        <h1>L’histoire de Chrétien-Épelle-Moi</h1>
 
         <p>
           Découvrez l’origine et l’évolution de cette initiative éducative
@@ -404,7 +404,7 @@ export default function History() {
             <h2>La naissance du projet</h2>
 
             <p>
-              Le concours <strong>Chrétien Épelle-Moi</strong> est né de la volonté
+              <strong>Chrétien-Épelle-Moi</strong> est né de la volonté
               de contribuer à l’épanouissement intellectuel, culturel et spirituel
               des jeunes au sein des communautés chrétiennes.
             </p>
@@ -451,7 +451,7 @@ export default function History() {
               <h3>2020</h3>
 
               <p>
-                Lancement de la première édition du concours Chrétien Épelle-Moi,
+                Lancement de la première édition de Chrétien-Épelle-Moi,
                 avec la participation de jeunes issus de plusieurs paroisses
                 et communautés chrétiennes.
               </p>
@@ -532,7 +532,7 @@ export default function History() {
         <h2>L’impact du concours</h2>
 
         <p>
-          Au fil des éditions, le concours Chrétien Épelle-Moi
+          Au fil des éditions, Chrétien-Épelle-Moi
           s’est imposé comme une initiative éducative et spirituelle
           qui contribue à la formation et à l’épanouissement des jeunes.
         </p>
