@@ -46,7 +46,7 @@ export default function Footer() {
           <ul>
 
             <li><Link to="/">Accueil</Link></li>
-            <li><Link to="/a-propos">à propos</Link></li>
+            <li><Link to="/concours">Concours</Link></li>
             <li><Link to="/admin-login">Partie Admin</Link></li>
             <li><Link to="/contact">Contact</Link></li>
 

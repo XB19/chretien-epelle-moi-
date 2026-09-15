@@ -24,6 +24,31 @@ max-width:700px;
 margin:auto;
 }
 
+.page-hero-links{
+display:flex;
+gap:16px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.page-hero-links a{
+background:rgba(255,255,255,0.12);
+border:1px solid rgba(255,255,255,0.4);
+color:white;
+padding:10px 22px;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+}
+
+.page-hero-links a:hover{
+background:#FFC107;
+border-color:#FFC107;
+color:black;
+}
+
 
 /* ABOUT STORY */
 
@@ -61,6 +86,154 @@ flex:1;
 width:100%;
 border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+
+/* PROGRAMME */
+
+.programme-section{
+padding:90px 10%;
+background:#f9fafb;
+}
+
+.section-header{
+text-align:center;
+max-width:700px;
+margin:0 auto 40px;
+}
+
+.section-header h2{
+font-size:32px;
+margin-bottom:12px;
+}
+
+.section-header p{
+color:#666;
+line-height:1.7;
+}
+
+.programme-table-wrap{
+overflow-x:auto;
+background:white;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+table.programme-table{
+width:100%;
+border-collapse:collapse;
+min-width:650px;
+}
+
+.programme-table th{
+background:#1E4DB7;
+color:white;
+text-align:left;
+padding:16px 20px;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:0.5px;
+}
+
+.programme-table td{
+padding:16px 20px;
+border-bottom:1px solid #eef0f4;
+color:#444;
+font-size:15px;
+}
+
+.programme-table tr:last-child td{
+border-bottom:none;
+}
+
+.programme-table tr:hover td{
+background:#f8fafc;
+}
+
+.section-note{
+text-align:center;
+color:#888;
+font-size:13px;
+margin-top:20px;
+font-style:italic;
+}
+
+
+/* REGLEMENT */
+
+.reglement-section{
+padding:90px 10%;
+}
+
+.reglement-list{
+max-width:850px;
+margin:0 auto;
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.reglement-item{
+background:white;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+overflow:hidden;
+}
+
+.reglement-item summary{
+cursor:pointer;
+list-style:none;
+padding:22px 26px;
+font-weight:700;
+font-size:17px;
+color:#1E4DB7;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.reglement-item summary::-webkit-details-marker{
+display:none;
+}
+
+.reglement-item summary .plus{
+font-size:22px;
+color:#1E4DB7;
+transition:0.3s;
+flex-shrink:0;
+}
+
+.reglement-item[open] summary .plus{
+transform:rotate(45deg);
+}
+
+.reglement-item .reglement-sub{
+font-size:13px;
+font-weight:400;
+color:#888;
+display:block;
+margin-top:4px;
+}
+
+.reglement-body{
+padding:0 26px 26px;
+color:#555;
+line-height:1.8;
+}
+
+.reglement-body h4{
+margin:16px 0 8px;
+color:#111;
+font-size:15px;
+}
+
+.reglement-body ul{
+padding-left:20px;
+}
+
+.reglement-body li{
+margin-bottom:6px;
 }
 
 
@@ -138,7 +311,7 @@ color:black;
 font-weight:600;
 }
 /* =========================
-RESPONSIVE ABOUT PAGE
+RESPONSIVE CONCOURS PAGE
 ========================= */
 
 /* Tablettes */
@@ -166,6 +339,14 @@ RESPONSIVE ABOUT PAGE
 
   .about-text h2{
     font-size:28px;
+  }
+
+  .programme-section{
+    padding:70px 5%;
+  }
+
+  .reglement-section{
+    padding:70px 5%;
   }
 
   .values{
@@ -219,6 +400,20 @@ RESPONSIVE ABOUT PAGE
     margin-bottom:20px;
   }
 
+  /* PROGRAMME / REGLEMENT */
+  .section-header h2{
+    font-size:26px;
+  }
+
+  .reglement-item summary{
+    padding:18px 20px;
+    font-size:15px;
+  }
+
+  .reglement-body{
+    padding:0 20px 20px;
+  }
+
   /* VALUES */
   .values h2{
     font-size:26px;
@@ -264,6 +459,10 @@ RESPONSIVE ABOUT PAGE
 
   .about-text p{
     font-size:14px;
+  }
+
+  .section-header h2{
+    font-size:22px;
   }
 
   .values{
@@ -361,7 +560,91 @@ font-size:14px;
 }
 `
 
-export default function About() {
+const programme = [
+  {
+    etape: 'Lancement & inscriptions',
+    periode: 'Janvier',
+    activite: "Ouverture des inscriptions dans les paroisses et communautés partenaires",
+    public: 'Tous niveaux',
+  },
+  {
+    etape: 'Phase éliminatoire',
+    periode: 'Mars',
+    activite: 'Épreuves d’épellation et de culture générale au sein de chaque communauté',
+    public: 'Tous niveaux',
+  },
+  {
+    etape: 'Demi-finales',
+    periode: 'Avril',
+    activite: 'Débats, plaidoiries et épreuves d’expression orale',
+    public: 'Candidats qualifiés',
+  },
+  {
+    etape: 'Grande finale',
+    periode: 'Mai',
+    activite: 'Finale générale et cérémonie de remise des prix',
+    public: 'Finalistes',
+  },
+]
+
+const reglement = [
+  {
+    niveau: 'Niveau Initiation',
+    tranche: 'CP – CE2 (6 à 9 ans)',
+    conditions: [
+      'Être inscrit via sa paroisse ou communauté partenaire',
+      'Avoir l’âge requis au 1er janvier de l’année en cours',
+    ],
+    epreuves: [
+      'Épellation de mots simples issus du dictionnaire',
+      'Questions de culture générale chrétienne adaptées à l’âge',
+    ],
+    format: 'Épreuve orale individuelle, environ 5 minutes par candidat',
+  },
+  {
+    niveau: 'Niveau Intermédiaire',
+    tranche: 'CM1 – CM2 (10 à 11 ans)',
+    conditions: [
+      'Être inscrit via sa paroisse ou communauté partenaire',
+      'Avoir réussi l’étape éliminatoire de sa communauté',
+    ],
+    epreuves: [
+      'Épellation de mots issus de la Bible et du dictionnaire Larousse',
+      'Culture générale sur le Togo et sur la foi chrétienne',
+    ],
+    format: 'Épreuve orale individuelle, environ 8 minutes par candidat',
+  },
+  {
+    niveau: 'Niveau Collège',
+    tranche: '6e – 3e (12 à 15 ans)',
+    conditions: [
+      'Être inscrit via sa paroisse ou communauté partenaire',
+      'Avoir réussi l’étape éliminatoire de sa communauté',
+    ],
+    epreuves: [
+      'Épellation de mots de niveau avancé',
+      'Culture générale et questions bibliques',
+      'Prise de parole en public sur un thème imposé',
+    ],
+    format: 'Épreuve mixte (orale et écrite), environ 12 minutes par candidat',
+  },
+  {
+    niveau: 'Niveau Lycée',
+    tranche: '2nde – Terminale (16 à 18 ans)',
+    conditions: [
+      'Être inscrit via sa paroisse ou communauté partenaire',
+      'Avoir réussi l’étape éliminatoire de sa communauté',
+    ],
+    epreuves: [
+      'Épellation de mots de niveau expert',
+      'Débats et plaidoiries sur des thèmes de société et de foi',
+      'Culture générale approfondie',
+    ],
+    format: 'Épreuve mixte (débat et épellation), environ 15 minutes par candidat',
+  },
+]
+
+export default function Concours() {
   return (
     <>
       <style>{css}</style>
@@ -369,12 +652,17 @@ export default function About() {
       {/* HERO */}
       <section className="page-hero">
 
-        <h1>À propos du concours Chrétien Épelle-Moi</h1>
+        <h1>Chrétien-Épelle-Moi</h1>
 
         <p>
           Une initiative éducative et chrétienne qui accompagne
           les jeunes dans l’apprentissage, la foi et l’excellence.
         </p>
+
+        <div className="page-hero-links">
+          <a href="#programme">Voir le programme</a>
+          <a href="#reglement">Consulter le règlement</a>
+        </div>
 
       </section>
 
@@ -390,7 +678,7 @@ export default function About() {
             <h2>Qui sommes-nous ?</h2>
 
             <p>
-              Le concours <strong>Chrétien Épelle-Moi</strong> est une initiative éducative
+              <strong>Chrétien-Épelle-Moi</strong> est une initiative éducative
               et spirituelle portée par une équipe de bénévoles engagés au service de la
               jeunesse et de l’Église.
             </p>
@@ -413,7 +701,7 @@ export default function About() {
 
           <div className="about-image">
 
-            <img src={asset('about.jpg')} alt="Concours epelle moi" />
+            <img src={asset('about.jpg')} alt="Chrétien-Épelle-Moi" />
 
           </div>
 
@@ -444,13 +732,13 @@ export default function About() {
             </p>
 
             <p>
-              À travers le concours Chrétien Épelle-Moi, nous souhaitons promouvoir
+              À travers Chrétien-Épelle-Moi, nous souhaitons promouvoir
               l’amour de la lecture, la maîtrise de la langue française, le développement
               de l’esprit critique et l’approfondissement des valeurs chrétiennes.
             </p>
 
             <p>
-              Nous aspirons à faire de ce concours une initiative éducative durable qui
+              Nous aspirons à faire de cette initiative un label éducatif durable qui
               favorise la participation active des jeunes dans la vie paroissiale et
               communautaire tout en renforçant les liens entre les différentes
               communautés chrétiennes.
@@ -459,6 +747,109 @@ export default function About() {
           </div>
 
         </div>
+
+      </section>
+
+
+      {/* PROGRAMME */}
+
+      <section className="programme-section" id="programme">
+
+        <div className="section-header">
+          <h2>Programme</h2>
+          <p>
+            Les grandes étapes du concours, de l’ouverture des inscriptions
+            jusqu’à la grande finale.
+          </p>
+        </div>
+
+        <div className="programme-table-wrap">
+
+          <table className="programme-table">
+
+            <thead>
+              <tr>
+                <th>Étape</th>
+                <th>Période</th>
+                <th>Activité</th>
+                <th>Public concerné</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {programme.map((ligne) => (
+                <tr key={ligne.etape}>
+                  <td><strong>{ligne.etape}</strong></td>
+                  <td>{ligne.periode}</td>
+                  <td>{ligne.activite}</td>
+                  <td>{ligne.public}</td>
+                </tr>
+              ))}
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p className="section-note">
+          Programme indicatif de l’édition à venir — les dates précises seront
+          communiquées lors de l’ouverture des inscriptions.
+        </p>
+
+      </section>
+
+
+      {/* REGLEMENT */}
+
+      <section className="reglement-section" id="reglement">
+
+        <div className="section-header">
+          <h2>Règlement</h2>
+          <p>
+            Chaque niveau du concours a ses propres conditions de participation,
+            épreuves et format. Cliquez sur un niveau pour en voir le détail.
+          </p>
+        </div>
+
+        <div className="reglement-list">
+
+          {reglement.map((niveau) => (
+            <details className="reglement-item" key={niveau.niveau}>
+
+              <summary>
+                <span>
+                  {niveau.niveau}
+                  <span className="reglement-sub">{niveau.tranche}</span>
+                </span>
+                <span className="plus">+</span>
+              </summary>
+
+              <div className="reglement-body">
+
+                <h4>Conditions de participation</h4>
+                <ul>
+                  {niveau.conditions.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+
+                <h4>Épreuves</h4>
+                <ul>
+                  {niveau.epreuves.map((item) => <li key={item}>{item}</li>)}
+                </ul>
+
+                <h4>Format</h4>
+                <p>{niveau.format}</p>
+
+              </div>
+
+            </details>
+          ))}
+
+        </div>
+
+        <p className="section-note">
+          Règlement indicatif — la version définitive sera publiée avant
+          l’ouverture des inscriptions de chaque édition.
+        </p>
 
       </section>
 
@@ -541,7 +932,7 @@ export default function About() {
         <h2>L’impact du concours</h2>
 
         <p>
-          Au fil des éditions, le concours Chrétien Épelle-Moi
+          Au fil des éditions, Chrétien-Épelle-Moi
           s’est imposé comme une initiative éducative et spirituelle
           qui contribue à la formation et à l’épanouissement des jeunes.
         </p>
@@ -577,7 +968,7 @@ export default function About() {
 
       <section className="about-cta">
 
-        <h2>Rejoignez l’aventure Chrétien Épelle-Moi</h2>
+        <h2>Rejoignez l’aventure Chrétien-Épelle-Moi</h2>
 
         <p>
           Participez au concours ou devenez partenaire

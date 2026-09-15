@@ -21,7 +21,7 @@ export default function Navbar() {
         <nav className={`nav-links${open ? ' active' : ''}`} id="navLinks">
 
           <Link to="/" onClick={closeMenu}>Accueil</Link>
-          <Link to="/a-propos" onClick={closeMenu}>À propos</Link>
+          <Link to="/concours" onClick={closeMenu}>Concours</Link>
           <Link to="/galerie" onClick={closeMenu}>Galerie</Link>
           <Link to="/temoignage" onClick={closeMenu}>Témoignages</Link>
           <Link to="/equipe" onClick={closeMenu}>Équipe</Link>

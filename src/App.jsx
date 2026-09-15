@@ -3,7 +3,7 @@ import ScrollToTop from './components/ScrollToTop.jsx'
 import ClientLayout from './components/ClientLayout.jsx'
 
 import Home from './pages/Home.jsx'
-import About from './pages/About.jsx'
+import Concours from './pages/Concours.jsx'
 import History from './pages/History.jsx'
 import Gallery from './pages/Gallery.jsx'
 import GalleryEdition from './pages/GalleryEdition.jsx'
@@ -30,7 +30,7 @@ export default function App() {
         {/* SITE CLIENT */}
         <Route element={<ClientLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/a-propos" element={<About />} />
+          <Route path="/concours" element={<Concours />} />
           <Route path="/histoire" element={<History />} />
           <Route path="/galerie" element={<Gallery />} />
           <Route path="/galerie/:edition" element={<GalleryEdition />} />

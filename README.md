@@ -15,7 +15,7 @@ Réécriture complète du site Django en **React (Vite)** connecté à **Supabas
 | Page | URL |
 |---|---|
 | Accueil | `/` |
-| À propos | `/a-propos` |
+| Concours | `/concours` |
 | Histoire | `/histoire` |
 | Galerie | `/galerie` et `/galerie/:edition` |
 | Témoignages | `/temoignage` |
