@@ -75,7 +75,7 @@ export default function Footer() {
 
             <li>
               <i className="fa-solid fa-location-dot"></i>
-              Sainte Rita de Zossimé
+              Lomé, Togo
             </li>
 
           </ul>

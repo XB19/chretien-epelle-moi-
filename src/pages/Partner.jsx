@@ -46,6 +46,129 @@ line-height:1.7;
 }
 
 
+/* CHARTE DE QUALITE */
+
+.charte-section{
+padding:80px 10%;
+background:#f9fafb;
+}
+
+.charte-section .section-header{
+text-align:center;
+max-width:750px;
+margin:0 auto 40px;
+}
+
+.charte-section .section-header h2{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.charte-section .section-header p{
+color:#666;
+line-height:1.7;
+}
+
+.charte-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+}
+
+.charte-card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.charte-card span{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:36px;
+height:36px;
+border-radius:50%;
+background:#1E4DB7;
+color:white;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.charte-card h3{
+margin-bottom:10px;
+font-size:18px;
+}
+
+.charte-card p{
+font-size:14px;
+color:#666;
+line-height:1.7;
+}
+
+
+/* TABLEAU BENEFICES */
+
+.benefits-table-section{
+padding:80px 10%;
+}
+
+.benefits-table-section .section-header{
+text-align:center;
+max-width:750px;
+margin:0 auto 40px;
+}
+
+.benefits-table-section .section-header h2{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.benefits-table-section .section-header p{
+color:#666;
+line-height:1.7;
+}
+
+.benefits-table-wrap{
+overflow-x:auto;
+background:white;
+border-radius:14px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+table.benefits-table{
+width:100%;
+border-collapse:collapse;
+min-width:700px;
+}
+
+.benefits-table th{
+background:#1E4DB7;
+color:white;
+text-align:left;
+padding:16px 20px;
+font-size:13px;
+text-transform:uppercase;
+letter-spacing:0.5px;
+}
+
+.benefits-table td{
+padding:16px 20px;
+border-bottom:1px solid #eef0f4;
+color:#444;
+font-size:14px;
+vertical-align:top;
+}
+
+.benefits-table tr:last-child td{
+border-bottom:none;
+}
+
+.benefits-table tr:hover td{
+background:#f8fafc;
+}
+
+
 /* BENEFITS */
 
 .partner-benefits{
@@ -303,6 +426,14 @@ RESPONSIVE PARTNER PAGE
     padding:70px 5%;
   }
 
+  .charte-section{
+    padding:70px 5%;
+  }
+
+  .benefits-table-section{
+    padding:70px 5%;
+  }
+
   .partner-benefits{
     padding:70px 5%;
   }
@@ -479,6 +610,39 @@ const partnerLogos = [
   '8.png', '9.png', '10.png', '11.png', '12.png', '13.png', '14.png',
 ]
 
+const charte = [
+  {
+    titre: 'La conformité éthique',
+    texte: 'Respect absolu des valeurs, de la morale et de la doctrine chrétienne.',
+  },
+  {
+    titre: 'L’excellence organisationnelle',
+    texte: 'Rigueur dans la gestion administrative, la sécurité des participants et la logistique.',
+  },
+  {
+    titre: 'L’impact communautaire',
+    texte: 'Mesure concrète des retombées positives pour la jeunesse et la paroisse d’accueil.',
+  },
+]
+
+const benefitsTable = [
+  {
+    cible: 'Paroisses & Clergé',
+    benefices: 'Animation saine, dynamique et attractive pour la jeunesse ; outil de rapprochement avec les fidèles et valorisation du patrimoine local.',
+    piliers: 'Événements culturels & Dynamisation paroissiale',
+  },
+  {
+    cible: 'Jeunes',
+    benefices: 'Cadre sain d’expression des talents, formations concrètes (leadership, prise de parole) et accompagnement vers l’autonomie financière.',
+    piliers: 'Compétitions, Formation & Entrepreneuriat',
+  },
+  {
+    cible: 'Partenaires & Sponsors',
+    benefices: 'Visibilité directe auprès d’une audience jeune, familiale et ciblée, associée à une cause éducative, éthique et noble.',
+    piliers: 'Régie événementielle & Écosystème média numérique',
+  },
+]
+
 export default function Partner() {
   const [form, setForm] = useState({ organization: '', contactName: '', email: '', phone: '', message: '' })
   const [success, setSuccess] = useState(false)
@@ -554,6 +718,77 @@ export default function Partner() {
           Votre organisation s’associe ainsi à un projet éducatif,
           communautaire et porteur de valeurs positives.
         </p>
+
+      </section>
+
+
+
+      {/* CHARTE DE QUALITE */}
+
+      <section className="charte-section">
+
+        <div className="section-header">
+          <h2>Notre charte de qualité</h2>
+          <p>
+            Lorsqu’un événement, une formation ou un projet porte le label
+            Chrétien-Épelle-Moi, il garantit aux fidèles, aux autorités
+            paroissiales et aux partenaires une triple assurance.
+          </p>
+        </div>
+
+        <div className="charte-grid">
+
+          {charte.map((item, i) => (
+            <div className="charte-card" key={item.titre}>
+              <span>{i + 1}</span>
+              <h3>{item.titre}</h3>
+              <p>{item.texte}</p>
+            </div>
+          ))}
+
+        </div>
+
+      </section>
+
+
+
+      {/* TABLEAU DES BENEFICES */}
+
+      <section className="benefits-table-section">
+
+        <div className="section-header">
+          <h2>Une valeur ajoutée pour chacun</h2>
+          <p>
+            Paroisses, jeunes, partenaires et sponsors : chaque acteur trouve
+            un bénéfice concret dans les activités portées par le label.
+          </p>
+        </div>
+
+        <div className="benefits-table-wrap">
+
+          <table className="benefits-table">
+
+            <thead>
+              <tr>
+                <th>Cible / Interlocuteur</th>
+                <th>Bénéfices & valeur ajoutée apportés</th>
+                <th>Piliers d’intervention associés</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {benefitsTable.map((ligne) => (
+                <tr key={ligne.cible}>
+                  <td><strong>{ligne.cible}</strong></td>
+                  <td>{ligne.benefices}</td>
+                  <td>{ligne.piliers}</td>
+                </tr>
+              ))}
+            </tbody>
+
+          </table>
+
+        </div>
 
       </section>
 
