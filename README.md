@@ -62,3 +62,35 @@ comme avec l'ancien système Django.
 Le site est une SPA : sur votre hébergeur (Vercel, Netlify, cPanel...),
 toutes les routes doivent être redirigées vers `index.html`.
 Sur Vercel/Netlify c'est automatique pour un projet Vite.
+
+## Lancer avec Docker
+
+Le projet est buildé (Vite) puis servi en statique par Nginx. Comme les
+variables Supabase sont intégrées au build, elles doivent être disponibles
+au moment du `docker build`, pas seulement au lancement du conteneur.
+
+1. Assurez-vous d'avoir un fichier `.env` à la racine (voir section
+   Configuration Supabase ci-dessus) — `docker-compose.yml` le lit
+   automatiquement.
+2. Build + démarrage :
+
+```bash
+docker compose up --build -d
+```
+
+Le site est ensuite accessible sur [http://localhost:8080](http://localhost:8080).
+
+Sans docker-compose, en Docker seul :
+
+```bash
+docker build \
+  --build-arg VITE_SUPABASE_URL=https://votre-projet.supabase.co \
+  --build-arg VITE_SUPABASE_ANON_KEY=votre_cle_anon \
+  -t chretien-epelle-moi .
+
+docker run -p 8080:80 chretien-epelle-moi
+```
+
+Pour appliquer un changement de code ou de variables, il faut reconstruire
+l'image (`docker compose up --build`), car le build Vite est figé dans
+l'image au moment du build.
