@@ -436,6 +436,19 @@ export default function Team() {
           une expérience inspirante et enrichissante aux jeunes participants.
         </p>
 
+        <p>
+          Le Chrétien-Épelle-Moi est né d’une volonté claire : créer un cadre
+          d’excellence, de confiance et d’accompagnement pour dynamiser la vie
+          paroissiale, révéler les talents des jeunes chrétiens et promouvoir
+          l’entrepreneuriat communautaire. Au Togo, le paysage socio-éducatif
+          et pastoral est marqué par un besoin croissant d’initiatives
+          associant l’excellence académique, la rigueur linguistique, la
+          formation théologique et l’engagement citoyen. Le label s’affirme
+          comme une structure d’encadrement, de certification et de
+          production culturelle au service des paroisses et des mouvements
+          de jeunesse.
+        </p>
+
       </section>
 
 
