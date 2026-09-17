@@ -14,6 +14,70 @@ export default function Home() {
           border-radius:12px;
           box-shadow:0 10px 25px rgba(0,0,0,0.08);
         }
+
+        .home-section-header{
+          text-align:center;
+          max-width:750px;
+          margin:0 auto 40px;
+        }
+
+        .home-section-header h2{
+          font-size:32px;
+          margin-bottom:12px;
+        }
+
+        .home-section-header p{
+          color:#666;
+          line-height:1.7;
+        }
+
+        .piliers-section{
+          padding:90px 0;
+          background:#f9fafb;
+        }
+
+        .piliers-grid{
+          display:grid;
+          grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+          gap:30px;
+          margin-top:40px;
+        }
+
+        .pilier-card{
+          background:white;
+          padding:30px;
+          border-radius:14px;
+          box-shadow:0 10px 25px rgba(0,0,0,0.06);
+          border-top:4px solid #1E4DB7;
+        }
+
+        .pilier-card i{
+          font-size:26px;
+          color:#1E4DB7;
+          margin-bottom:14px;
+        }
+
+        .pilier-card h3{
+          margin-bottom:12px;
+          font-size:19px;
+        }
+
+        .pilier-card ul{
+          padding-left:18px;
+          color:#555;
+          font-size:14px;
+          line-height:1.7;
+        }
+
+        .pilier-card li{
+          margin-bottom:8px;
+        }
+
+        @media (max-width:768px){
+          .home-section-header h2{
+            font-size:26px;
+          }
+        }
       `}</style>
 
       {/* HERO */}
@@ -94,6 +158,101 @@ export default function Home() {
 
           <div className="about-image">
             <img src={asset('about.jpg')} alt="Chrétien-Épelle-Moi" />
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* VISION & MISSION */}
+
+      <section className="about-platform">
+
+        <div className="container">
+
+          <div className="about-image">
+            <img src={asset('vision.jpg')} alt="Vision du projet" />
+          </div>
+
+          <div className="about-text">
+
+            <h2>Notre vision, notre mission</h2>
+
+            <p>
+              <strong>Notre vision :</strong> une jeunesse chrétienne épanouie,
+              formée, entreprenante et pleinement engagée dans la vie de
+              l’Église et de la société.
+            </p>
+
+            <p>
+              <strong>Notre mission :</strong> encadrer, concevoir et
+              promouvoir des activités culturelles, éducatives, spirituelles
+              et socio-économiques au sein des paroisses et des communautés.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* PILIERS */}
+
+      <section className="piliers-section">
+
+        <div className="container">
+
+          <div className="home-section-header">
+            <h2>Nos 4 piliers d’intervention</h2>
+            <p>
+              L’action opérationnelle du label repose sur quatre piliers
+              stratégiques, conçus pour couvrir l’ensemble des besoins
+              d’épanouissement de la jeunesse.
+            </p>
+          </div>
+
+          <div className="piliers-grid">
+
+            <div className="pilier-card">
+              <i className="fa-solid fa-award"></i>
+              <h3>Évènements & Compétitions Culturelles</h3>
+              <ul>
+                <li>Concours d’art oratoire & culture générale : maîtrise de la langue française, vocabulaire spécialisé et culture biblique/catéchétique.</li>
+                <li>Arts & expressions : festivals et concours de chant, danse et théâtre.</li>
+              </ul>
+            </div>
+
+            <div className="pilier-card">
+              <i className="fa-solid fa-church"></i>
+              <h3>Tourisme Chrétien & Événementiel</h3>
+              <ul>
+                <li>Tourisme spirituel et culturel : pèlerinages, sorties de détente chrétienne, visites patrimoniales et découverte des histoires paroissiales.</li>
+                <li>Assistance & régie événementielle : ingénierie logistique, technique et organisationnelle pour les événements portés par des groupements paroissiaux ou des partenaires.</li>
+              </ul>
+            </div>
+
+            <div className="pilier-card">
+              <i className="fa-solid fa-chalkboard-user"></i>
+              <h3>Formation & Renforcement de Capacités</h3>
+              <ul>
+                <li>Ateliers pratiques : prise de parole en public, leadership chrétien, expression oratoire, gestion de projets.</li>
+                <li>Séminaires d’orientation académique, de développement personnel et d’éthique professionnelle ancrés dans les valeurs de l’Évangile.</li>
+              </ul>
+            </div>
+
+            <div className="pilier-card">
+              <i className="fa-solid fa-seedling"></i>
+              <h3>Entrepreneuriat & Dynamisation Paroissiale</h3>
+              <ul>
+                <li>Promotion de l’entrepreneuriat : incitation, coaching et accompagnement des initiatives économiques des jeunes.</li>
+                <li>Mise en valeur des paroisses : autonomisation financière et modernisation des canaux de communication avec les fidèles.</li>
+              </ul>
+            </div>
+
           </div>
 
         </div>

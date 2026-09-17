@@ -86,96 +86,6 @@ color:#888;
 }
 
 
-/* ABOUT STORY */
-
-.about-story{
-padding:80px 10%;
-}
-
-.about-grid{
-display:flex;
-align-items:center;
-gap:60px;
-flex-wrap:wrap;
-}
-
-.about-text{
-flex:1;
-}
-
-.about-text h2{
-font-size:32px;
-margin-bottom:20px;
-}
-
-.about-text h3{
-font-size:20px;
-margin:20px 0 8px;
-color:#1E4DB7;
-}
-
-.about-text p{
-line-height:1.8;
-color:#555;
-margin-bottom:15px;
-}
-
-.about-image{
-flex:1;
-}
-
-.about-image img{
-width:100%;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-}
-
-
-/* PILIERS */
-
-.piliers-section{
-padding:90px 10%;
-background:#f9fafb;
-}
-
-.piliers-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-top:40px;
-}
-
-.pilier-card{
-background:white;
-padding:30px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.06);
-border-top:4px solid #1E4DB7;
-}
-
-.pilier-card i{
-font-size:26px;
-color:#1E4DB7;
-margin-bottom:14px;
-}
-
-.pilier-card h3{
-margin-bottom:12px;
-font-size:19px;
-}
-
-.pilier-card ul{
-padding-left:18px;
-color:#555;
-font-size:14px;
-line-height:1.7;
-}
-
-.pilier-card li{
-margin-bottom:8px;
-}
-
-
 /* PROGRAMME */
 
 .programme-section{
@@ -485,22 +395,6 @@ RESPONSIVE CONCOURS PAGE
     font-size:17px;
   }
 
-  .about-story{
-    padding:70px 5%;
-  }
-
-  .about-grid{
-    gap:40px;
-  }
-
-  .about-text h2{
-    font-size:28px;
-  }
-
-  .piliers-section{
-    padding:70px 5%;
-  }
-
   .programme-section{
     padding:70px 5%;
   }
@@ -540,32 +434,6 @@ RESPONSIVE CONCOURS PAGE
 
   .founder-quote{
     font-size:17px;
-  }
-
-  /* STACK */
-  .about-grid{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .about-text{
-    order:2;
-  }
-
-  .about-image{
-    order:1;
-  }
-
-  .about-text h2{
-    font-size:24px;
-  }
-
-  .about-text p{
-    font-size:15px;
-  }
-
-  .about-image img{
-    margin-bottom:20px;
   }
 
   /* PROGRAMME / REGLEMENT */
@@ -627,18 +495,6 @@ RESPONSIVE CONCOURS PAGE
   }
 
   .page-hero p{
-    font-size:14px;
-  }
-
-  .about-story{
-    padding:50px 5%;
-  }
-
-  .about-text h2{
-    font-size:20px;
-  }
-
-  .about-text p{
     font-size:14px;
   }
 
@@ -710,41 +566,6 @@ const programme = [
     description: 'Quiz spécial, manches (épellation, vrai/faux, reconstitution, case vide) et présentation (Dogme & Projet).',
     ponderation: 'Face-à-face 100 %',
     qualification: 'Champion et deuxième de l’édition',
-  },
-]
-
-const piliers = [
-  {
-    icon: 'fa-award',
-    titre: 'Évènements & Compétitions Culturelles',
-    items: [
-      'Concours d’art oratoire & culture générale : maîtrise de la langue française, vocabulaire spécialisé et culture biblique/catéchétique.',
-      'Arts & expressions : festivals et concours de chant, danse et théâtre.',
-    ],
-  },
-  {
-    icon: 'fa-church',
-    titre: 'Tourisme Chrétien & Événementiel',
-    items: [
-      'Tourisme spirituel et culturel : pèlerinages, sorties de détente chrétienne, visites patrimoniales et découverte des histoires paroissiales.',
-      'Assistance & régie événementielle : ingénierie logistique, technique et organisationnelle pour les événements portés par des groupements paroissiaux ou des partenaires.',
-    ],
-  },
-  {
-    icon: 'fa-chalkboard-user',
-    titre: 'Formation & Renforcement de Capacités',
-    items: [
-      'Ateliers pratiques : prise de parole en public, leadership chrétien, expression oratoire, gestion de projets.',
-      'Séminaires d’orientation académique, de développement personnel et d’éthique professionnelle ancrés dans les valeurs de l’Évangile.',
-    ],
-  },
-  {
-    icon: 'fa-seedling',
-    titre: 'Entrepreneuriat & Dynamisation Paroissiale',
-    items: [
-      'Promotion de l’entrepreneuriat : incitation, coaching et accompagnement des initiatives économiques des jeunes.',
-      'Mise en valeur des paroisses : autonomisation financière et modernisation des canaux de communication avec les fidèles.',
-    ],
   },
 ]
 
@@ -912,7 +733,6 @@ export default function Concours() {
         </p>
 
         <div className="page-hero-links">
-          <a href="#piliers">Nos piliers</a>
           <a href="#programme">Voir le programme</a>
           <a href="#reglement">Consulter le règlement</a>
         </div>
@@ -930,42 +750,6 @@ export default function Concours() {
           révéler ses talents tout en restant ancrée dans la foi, au service
           de sa communauté et de sa paroisse.
           <span>— L’équipe dirigeante de Chrétien-Épelle-Moi</span>
-        </div>
-
-      </section>
-
-
-      {/* VISION & MISSION */}
-
-      <section className="about-story">
-
-        <div className="about-grid">
-
-          <div className="about-image">
-
-            <img src={asset('vision.jpg')} alt="Vision du projet" />
-
-          </div>
-
-          <div className="about-text">
-
-            <h2>Notre vision, notre mission</h2>
-
-            <h3>Notre vision</h3>
-            <p>
-              Une jeunesse chrétienne épanouie, formée, entreprenante et
-              pleinement engagée dans la vie de l’Église et de la société.
-            </p>
-
-            <h3>Notre mission</h3>
-            <p>
-              Encadrer, concevoir et promouvoir des activités culturelles,
-              éducatives, spirituelles et socio-économiques au sein des
-              paroisses et des communautés.
-            </p>
-
-          </div>
-
         </div>
 
       </section>
@@ -1038,40 +822,6 @@ export default function Concours() {
             </Swiper>
 
           </div>
-
-        </div>
-
-      </section>
-
-
-      {/* PILIERS */}
-
-      <section className="piliers-section" id="piliers">
-
-        <div className="section-header">
-          <h2>Nos 4 piliers d’intervention</h2>
-          <p>
-            L’action opérationnelle du label repose sur quatre piliers
-            stratégiques, conçus pour couvrir l’ensemble des besoins
-            d’épanouissement de la jeunesse.
-          </p>
-        </div>
-
-        <div className="piliers-grid">
-
-          {piliers.map((pilier) => (
-            <div className="pilier-card" key={pilier.titre}>
-
-              <i className={`fa-solid ${pilier.icon}`}></i>
-
-              <h3>{pilier.titre}</h3>
-
-              <ul>
-                {pilier.items.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-
-            </div>
-          ))}
 
         </div>
 
