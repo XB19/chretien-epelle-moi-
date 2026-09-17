@@ -395,7 +395,7 @@ const members = [
     text: `S’occupe de la préparation du matériel, des installations et de tout ce qui garantit le bon déroulement pratique des activités.`,
   },
   {
-    photo: 'team3.jpg',
+    photo: 'team5.jpg',
     name: 'Hossou Abra Alida',
     role: 'Suivi & Évaluation',
     text: `Veille au respect des objectifs du concours, au suivi des activités et à l’amélioration continue des différentes éditions.`,
@@ -407,7 +407,7 @@ const members = [
     text: `Met en lumière les moments forts du concours à travers les réseaux sociaux, les photos et les contenus multimédias.`,
   },
   {
-    photo: 'team5.jpg',
+    photo: 'team3.jpg',
     name: 'Virginie GNAWO',
     role: 'Documentation',
     text: `Assure la rédaction des rapports, l’archivage des données et la conservation des souvenirs marquants du concours.`,
