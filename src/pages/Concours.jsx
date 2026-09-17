@@ -1,4 +1,7 @@
 import { Link } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
+import 'swiper/css'
 import { asset } from '../lib/assets.js'
 import Counter from '../components/Counter.jsx'
 
@@ -1006,6 +1009,79 @@ export default function Concours() {
               éducatives, spirituelles et socio-économiques au sein des
               paroisses et des communautés.
             </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* PRESENTATION DU CONCOURS */}
+
+      <section className="about-platform">
+
+        <div className="container">
+
+          <div className="about-text">
+
+            <h2>Présentation du concours</h2>
+
+            <p>
+              <strong>Chrétien-Épelle-Moi</strong> est une initiative
+              éducative et spirituelle portée par une équipe de bénévoles engagés
+              au service de la jeunesse et de l’Église.
+            </p>
+
+            <p>
+              À travers un programme d’activités pédagogiques et ludiques, ce concours
+              met en valeur l’importance de la maîtrise de la langue française, de l’art
+              oratoire, de la culture générale sur le Togo et de la connaissance
+              des textes religieux.
+            </p>
+
+            <p>
+              Les participants sont invités à relever plusieurs défis : épellation de mots
+              issus de la Bible et du dictionnaire Larousse, réponses à des questions de
+              culture générale, débats et plaidoiries sur différents thèmes.
+            </p>
+
+            <p>
+              Cette initiative vise à offrir aux jeunes un espace d’apprentissage,
+              d’expression et de croissance spirituelle dans un esprit de
+              fraternité et de compétition saine.
+            </p>
+
+            <a href="#programme" className="btn-primary">
+              Voir le programme
+            </a>
+
+          </div>
+
+
+          <div className="about-image">
+
+            <Swiper
+              className="aboutSwiper"
+              modules={[Autoplay]}
+              loop={true}
+              autoplay={{ delay: 3000, disableOnInteraction: false }}
+              spaceBetween={20}
+            >
+
+              <SwiperSlide>
+                <img src={asset('photo1.jpg')} />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <img src={asset('photo2.jpg')} />
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <img src={asset('photo3.jpg')} />
+              </SwiperSlide>
+
+            </Swiper>
 
           </div>
 
