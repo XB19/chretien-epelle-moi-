@@ -9,6 +9,13 @@ export default function Home() {
   return (
     <>
 
+      <style>{`
+        .about-platform .about-image img{
+          border-radius:12px;
+          box-shadow:0 10px 25px rgba(0,0,0,0.08);
+        }
+      `}</style>
+
       {/* HERO */}
 
       <section className="hero">
@@ -37,6 +44,56 @@ export default function Home() {
 
             <Link to="/partenaire" className="btn-secondary">Devenir partenaire</Link>
 
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      {/* QUI SOMMES-NOUS */}
+
+      <section className="about-platform">
+
+        <div className="container">
+
+          <div className="about-text">
+
+            <h2>Qui sommes-nous ?</h2>
+
+            <p>
+              <strong>Chrétien-Épelle-Moi</strong> est un label d’accompagnement,
+              d’organisation et de certification d’initiatives chrétiennes. Il agit
+              comme une caution d’excellence et de crédibilité pour dynamiser
+              l’engagement des fidèles et valoriser les projets communautaires.
+            </p>
+
+            <p>
+              Il est né d’une volonté claire : créer un cadre d’excellence, de
+              confiance et d’accompagnement pour dynamiser la vie paroissiale,
+              révéler les talents des jeunes chrétiens et promouvoir
+              l’entrepreneuriat communautaire.
+            </p>
+
+            <p>
+              Au Togo, le paysage socio-éducatif et pastoral est marqué par un
+              besoin croissant d’initiatives associant l’excellence académique,
+              la rigueur linguistique, la formation théologique et l’engagement
+              citoyen. Le label s’affirme comme une structure d’encadrement, de
+              certification et de production culturelle au service des paroisses
+              et des mouvements de jeunesse.
+            </p>
+
+            <Link to="/concours" className="btn-primary">
+              Découvrir le concours
+            </Link>
+
+          </div>
+
+
+          <div className="about-image">
+            <img src={asset('about.jpg')} alt="Chrétien-Épelle-Moi" />
           </div>
 
         </div>

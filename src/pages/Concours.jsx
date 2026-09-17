@@ -935,52 +935,6 @@ export default function Concours() {
       </section>
 
 
-      {/* QUI SOMMES-NOUS */}
-
-      <section className="about-story">
-
-        <div className="about-grid">
-
-          <div className="about-text">
-
-            <h2>Qui sommes-nous ?</h2>
-
-            <p>
-              <strong>Chrétien-Épelle-Moi</strong> est un label d’accompagnement,
-              d’organisation et de certification d’initiatives chrétiennes. Il agit
-              comme une caution d’excellence et de crédibilité pour dynamiser
-              l’engagement des fidèles et valoriser les projets communautaires.
-            </p>
-
-            <p>
-              Il est né d’une volonté claire : créer un cadre d’excellence, de
-              confiance et d’accompagnement pour dynamiser la vie paroissiale,
-              révéler les talents des jeunes chrétiens et promouvoir
-              l’entrepreneuriat communautaire.
-            </p>
-
-            <p>
-              Au Togo, le paysage socio-éducatif et pastoral est marqué par un
-              besoin croissant d’initiatives associant l’excellence académique,
-              la rigueur linguistique, la formation théologique et l’engagement
-              citoyen. Le label s’affirme comme une structure d’encadrement, de
-              certification et de production culturelle au service des paroisses
-              et des mouvements de jeunesse.
-            </p>
-
-          </div>
-
-          <div className="about-image">
-
-            <img src={asset('about.jpg')} alt="Chrétien-Épelle-Moi" />
-
-          </div>
-
-        </div>
-
-      </section>
-
-
       {/* VISION & MISSION */}
 
       <section className="about-story">
