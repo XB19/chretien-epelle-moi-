@@ -97,15 +97,76 @@ TEAM SECTION
   gap:35px;
 }
 
-.team-lead-row{
+.team-lead-bio{
+  position:relative;
+  overflow:hidden;
+
   display:flex;
-  justify-content:center;
-  margin-bottom:35px;
+  align-items:center;
+  gap:50px;
+  flex-wrap:wrap;
+
+  background:white;
+  padding:40px;
+
+  border-radius:24px;
+  border:1px solid #edf0f5;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.04);
+
+  margin-bottom:45px;
 }
 
-.team-lead-row .team-card{
+.team-lead-bio::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
   width:100%;
-  max-width:320px;
+  height:6px;
+  background:linear-gradient(to right,#1E4DB7,#2563eb);
+}
+
+.team-lead-photo{
+  flex:0 0 260px;
+}
+
+.team-lead-photo img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.team-lead-text{
+  flex:1;
+  min-width:280px;
+}
+
+.team-lead-text h3{
+  font-size:26px;
+  margin-bottom:8px;
+  color:#111827;
+}
+
+.team-lead-text h4{
+  margin:24px 0 8px;
+  color:#1E4DB7;
+  font-size:14px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+
+.team-lead-text h4:first-of-type{
+  margin-top:20px;
+}
+
+.team-lead-text p{
+  color:#64748b;
+  line-height:1.8;
+  font-size:15px;
 }
 
 
@@ -322,6 +383,18 @@ MOBILE
     padding:50px 5% 70px;
   }
 
+  .team-lead-bio{
+    flex-direction:column;
+    text-align:center;
+    padding:28px 22px;
+    gap:25px;
+  }
+
+  .team-lead-photo{
+    flex:0 0 auto;
+    width:200px;
+  }
+
   .team-grid{
     grid-template-columns:1fr;
     gap:25px;
@@ -447,19 +520,6 @@ export default function Team() {
           une expérience inspirante et enrichissante aux jeunes participants.
         </p>
 
-        <p>
-          Le Chrétien-Épelle-Moi est né d’une volonté claire : créer un cadre
-          d’excellence, de confiance et d’accompagnement pour dynamiser la vie
-          paroissiale, révéler les talents des jeunes chrétiens et promouvoir
-          l’entrepreneuriat communautaire. Au Togo, le paysage socio-éducatif
-          et pastoral est marqué par un besoin croissant d’initiatives
-          associant l’excellence académique, la rigueur linguistique, la
-          formation théologique et l’engagement citoyen. Le label s’affirme
-          comme une structure d’encadrement, de certification et de
-          production culturelle au service des paroisses et des mouvements
-          de jeunesse.
-        </p>
-
       </section>
 
 
@@ -470,13 +530,13 @@ export default function Team() {
 
         <div className="container">
 
-          <div className="team-lead-row">
+          <div className="team-lead-bio">
 
-            <div className="team-card">
+            <div className="team-lead-photo">
+              <img src={asset(members[0].photo)} alt={members[0].name} />
+            </div>
 
-              <div className="team-photo-wrapper">
-                <img src={asset(members[0].photo)} className="team-photo" alt="" />
-              </div>
+            <div className="team-lead-text">
 
               <h3>{members[0].name}</h3>
 
@@ -484,8 +544,29 @@ export default function Team() {
                 {members[0].role}
               </div>
 
+              <h4>Portrait</h4>
               <p>
-                {members[0].text}
+                Jeune Togolais chrétien catholique, Daniel Ayetan est un
+                professionnel de la communication, du marketing et de la
+                gestion de projets. Il a notamment été responsable du CCACJ
+                de la paroisse Sainte-Rita de Zossimé pendant huit ans,
+                contribuant activement à l’accompagnement et à l’engagement
+                des jeunes.
+              </p>
+
+              <h4>Vision éducative</h4>
+              <p>
+                Le Chrétien-Épelle-Moi est né d’une volonté claire : créer un
+                cadre d’excellence, de confiance et d’accompagnement pour
+                dynamiser la vie paroissiale, révéler les talents des jeunes
+                chrétiens et promouvoir l’entrepreneuriat communautaire. Au
+                Togo, le paysage socio-éducatif et pastoral est marqué par un
+                besoin croissant d’initiatives associant l’excellence
+                académique, la rigueur linguistique, la formation théologique
+                et l’engagement citoyen. Le label s’affirme comme une
+                structure d’encadrement, de certification et de production
+                culturelle au service des paroisses et des mouvements de
+                jeunesse.
               </p>
 
             </div>
