@@ -97,6 +97,17 @@ TEAM SECTION
   gap:35px;
 }
 
+.team-lead-row{
+  display:flex;
+  justify-content:center;
+  margin-bottom:35px;
+}
+
+.team-lead-row .team-card{
+  width:100%;
+  max-width:320px;
+}
+
 
 /* =========================
 CARD
@@ -459,9 +470,31 @@ export default function Team() {
 
         <div className="container">
 
+          <div className="team-lead-row">
+
+            <div className="team-card">
+
+              <div className="team-photo-wrapper">
+                <img src={asset(members[0].photo)} className="team-photo" alt="" />
+              </div>
+
+              <h3>{members[0].name}</h3>
+
+              <div className="team-role">
+                {members[0].role}
+              </div>
+
+              <p>
+                {members[0].text}
+              </p>
+
+            </div>
+
+          </div>
+
           <div className="team-grid">
 
-            {members.map((member) => (
+            {members.slice(1).map((member) => (
               <div className="team-card" key={member.name}>
 
                 <div className="team-photo-wrapper">
