@@ -725,11 +725,13 @@ export default function Concours() {
       {/* HERO */}
       <section className="page-hero">
 
-        <h1>Chrétien-Épelle-Moi</h1>
+        <h1>Concours</h1>
 
         <p>
-          Un label d’accompagnement, d’organisation et de certification
-          d’initiatives chrétiennes, dont le concours annuel est la vitrine.
+          Il est né d’une volonté claire : créer un cadre d’excellence, de
+          confiance et d’accompagnement pour dynamiser la vie paroissiale,
+          révéler les talents des jeunes chrétiens et promouvoir
+          l’entrepreneuriat communautaire.
         </p>
 
         <div className="page-hero-links">
